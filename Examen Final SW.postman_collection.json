@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "f5904386-d08c-4f5d-b985-81bc73f6babd",
+		"name": "Examen Final SW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32422447"
+	},
+	"item": [
+		{
+			"name": "/utilisateurs/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nom\": \"string\",\r\n  \"prenom\": \"string\",\r\n  \"courriel\": \"user@example.com\",\r\n  \"password\": \"********\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/utilisateurs/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"utilisateurs",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/utilisateurs/generateApiKey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"allo\",\r\n  \"password\": \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/utilisateurs/generateApiKey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"utilisateurs",
+						"generateApiKey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/taches/all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/taches/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/taches/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/taches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sous-taches/ajouter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"string\",\r\n  \"complete\": 0,\r\n  \"tache_id\": 17\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sous-taches/ajouter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sous-taches",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sous-taches/update/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sous-taches/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sous-taches",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sous-taches/statut/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sous-taches/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sous-taches",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sous-taches/delete/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sous-taches/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sous-taches",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/taches/update/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"string\",\r\n  \"description\": \"string\",\r\n  \"date_debut\": \"2024-04-28T21:06:22.006Z\",\r\n  \"date_echeance\": \"2024-04-28T21:06:22.006Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/taches/update/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches",
+						"update",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/taches/statut/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"string\",\r\n  \"description\": \"string\",\r\n  \"date_debut\": \"2024-04-28T21:06:22.006Z\",\r\n  \"date_echeance\": \"2024-04-28T21:06:22.006Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/taches/update/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches",
+						"update",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/taches/ajouter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"allo\",\r\n  \"description\": \"string\",\r\n  \"date_debut\": \"2024-04-28T21:04:46.613Z\",\r\n  \"date_echeance\": \"2024-04-28T21:04:46.613Z\",\r\n  \"complete\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/taches/ajouter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/taches/{id}/details",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/taches/delete/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches",
+						"delete",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/taches/delete/{id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 182ebdd9-41a3-4634-a59b-2698ab13421b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/taches/17/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"taches",
+						"17",
+						"details"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

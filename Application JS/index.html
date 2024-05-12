@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestion des Utilisateurs</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <h1>Gestion des Utilisateurs</h1>
+
+    <h2>Créer un nouvel utilisateur</h2>
+    <form id="userForm">
+      <input type="text" id="nom" placeholder="Nom" required />
+      <input type="text" id="prenom" placeholder="Prenom" required />
+      <input type="email" id="courriel" placeholder="Courriel" required />
+      <input type="password" id="password" placeholder="Mot de passe" required />
+
+      <button type="submit">Créer Utilisateur</button>
+    </form>
+
+    <h2>Régénérer une clé API</h2>
+    <form id="apiKeyForm">
+      <input type="text" id="email" placeholder="Courriel" required />
+      <input type="password" id="passwordApiKey" placeholder="Mot de passe" required />
+      <button type="submit">Régénérer Clé</button>
+    </form>
+  </body>
+</html>

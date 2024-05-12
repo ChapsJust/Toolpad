@@ -1,0 +1,156 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mui/mui-toolpad/v0.1.54/docs/schemas/v1/definitions.json#properties/Page
+
+apiVersion: v1
+kind: page
+spec:
+  title: Default page
+  alias:
+    - 7py6l_N
+  queries:
+    - name: GetAllTache
+      mode: query
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "/taches/all"
+        headers:
+          [{ name: Authorization, value: { $$jsExpression: parameters.api } }]
+        method: GET
+        searchParams: []
+      parameters:
+        - name: host
+          value:
+            $$env: Host
+        - name: api
+          value:
+            $$env: Api
+    - name: GetNonCompleteTache
+      mode: query
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "/taches/"
+        headers:
+          [{ name: Authorization, value: { $$jsExpression: parameters.api } }]
+        method: GET
+        searchParams: []
+      parameters:
+        - name: host
+          value:
+            $$env: Host
+        - name: api
+          value:
+            $$env: Api
+    - name: utilisateursCreate
+      mode: query
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "/utilisateurs/create"
+        headers: []
+        body:
+          kind: raw
+          content: "{\r
+
+            \  \"nom\": \"string\",\r
+
+            \  \"prenom\": \"string\",\r
+
+            \  \"courriel\": \"user@example.com\",\r
+
+            \  \"password\": \"******\"\r
+
+            }"
+          contentType: application/json
+        method: POST
+        searchParams: []
+      parameters:
+        - name: host
+          value:
+            $$env: Host
+        - name: api
+          value:
+            $$env: Api
+    - name: utilisateursGenerateApiKey
+      mode: query
+      query:
+        kind: rest
+        url:
+          $$jsExpression: parameters.host + "/utilisateurs/generateApiKey"
+        headers:
+          [{ name: Authorization, value: { $$jsExpression: parameters.api } }]
+        body:
+          kind: raw
+          content: "{\r
+
+            \  \"email\": \"allo\",\r
+
+            \  \"password\": \"qwerty\"\r
+
+            }"
+          contentType: application/json
+        method: POST
+        searchParams: []
+      parameters:
+        - name: host
+          value:
+            $$env: Host
+        - name: api
+          value:
+            $$env: Api
+    - name: tachesAjouter
+      mode: query
+      query:
+        kind: rest
+        url: http://localhost:3000/taches/ajouter
+        headers: []
+        method: POST
+        body:
+          kind: raw
+          content: ""
+          contentType: application/json
+        searchParams: []
+  content:
+    - component: DataGrid
+      name: dataGrid
+      props:
+        rows:
+          $$jsExpression: GetAllTache.data
+    - component: Button
+      name: button
+      props:
+        onClick:
+          $$jsExpressionAction: GetAllTache.call()
+        content: GetAllTaches
+    - component: DataGrid
+      name: dataGrid1
+      props:
+        rows:
+          $$jsExpression: GetNonCompleteTache.data
+    - component: Button
+      name: button1
+      props:
+        onClick:
+          $$jsExpressionAction: GetNonCompleteTache.call()
+        content: GetTac
+    - component: DataGrid
+      name: dataGrid2
+      props:
+        rows:
+          $$jsExpression: utilisateursCreate.data
+    - component: Button
+      name: button2
+      props:
+        content: CreateUser
+        onClick:
+          $$jsExpressionAction: utilisateursCreate.call()
+    - component: DataGrid
+      name: dataGrid3
+      props:
+        rows:
+          $$jsExpression: utilisateursGenerateApiKey.data
+    - component: Button
+      name: button3
+      props:
+        onClick:
+          $$jsExpressionAction: utilisateursGenerateApiKey.call()
